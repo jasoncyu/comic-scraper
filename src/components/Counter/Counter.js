@@ -1,7 +1,15 @@
-const counter = (state, action) => {
-  if (action.type === 'INCREMENT') {
-    return state + 1
+import React, { Component, PropTypes } from 'react';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import s from './Counter.scss'
+
+class Counter extends Component {
+  render() {
+    return (
+      <div>
+        Counter
+      </div>
+    )
   }
 }
 
-module.exports = {counter}
+export default withStyles(s)(Counter);
