@@ -13,6 +13,19 @@ import React, {
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { createStore } from 'redux'
 import s from './Contact.scss';
+
+// Start with default if no state is passed
+const counter = (state = 0, action) => {
+  console.log("state: ", state);
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
+    default:
+      return state
+  }
+}
 import Counter from '../../components/Counter'
 
 const title = 'Contact Us';
