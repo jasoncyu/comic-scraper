@@ -3,10 +3,10 @@ import { createStore } from 'redux'
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Counter.scss'
 
-function Counter({value, onIncrement, onDecrement}) {
+function Counter({onIncrement, onDecrement}) {
   return (
     <div>
-      <div>{value}</div>
+      <div>0</div>
       <button onClick={onIncrement}>+</button>
       <button onClick={onDecrement}>-</button>
     </div>

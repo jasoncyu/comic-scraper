@@ -35,13 +35,13 @@ const store = createStore(counter)
 function Contact(props, context) {
   context.setTitle(title);
   const onIncrement = () => {
-    store.dispatch({
+    context.store.dispatch({
       type: 'INCREMENT',
     })
   }
 
   const onDecrement = () => {
-    store.dispatch({
+    context.store.dispatch({
       type: 'DECREMENT',
     })
   }
@@ -52,7 +52,6 @@ function Contact(props, context) {
         <h1>{title}</h1>
         <p>...</p>
         <Counter
-          value={store.getState()}
           onIncrement={onIncrement}
           onDecrement={onDecrement}
         />
@@ -63,6 +62,7 @@ function Contact(props, context) {
 
 Contact.contextTypes = {
   setTitle: PropTypes.func.isRequired,
+  store: PropTypes.object.isRequired,
 };
 
 export default withStyles(s)(Contact);
