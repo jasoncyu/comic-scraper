@@ -31,20 +31,6 @@ const mapStateToProps = (state) => {
     counterValue: state.counter.counterValue,
   }
 }
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onIncrement: () => {
-      dispatch({
-        type: 'INCREMENT',
-      })
-    },
-    onDecrement: () => {
-      dispatch({
-        type: 'DECREMENT',
-      })
-    },
-  }
-}
+const mapDispatchToProps = { onIncrement: increment, onDecrement: decrement }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(s)(Counter));
