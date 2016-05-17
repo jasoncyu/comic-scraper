@@ -3,14 +3,18 @@ import { createStore } from 'redux'
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Counter.scss'
 
-function Counter({onIncrement, onDecrement}) {
+function Counter(props, context) {
+  console.log("context.getState(): ", context.store.getState());
   return (
     <div>
-      <div>0</div>
-      <button onClick={onIncrement}>+</button>
-      <button onClick={onDecrement}>-</button>
+      <div>asdfasdf</div>
+      <button onClick={props.onIncrement}>+</button>
+      <button onClick={props.onDecrement}>-</button>
     </div>
   )
+}
+Counter.contextTypes = {
+  store: PropTypes.object.isRequired,
 }
 
 export default withStyles(s)(Counter);
