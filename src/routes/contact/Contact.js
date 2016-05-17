@@ -11,7 +11,6 @@ import React, {
   PropTypes
 } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { createStore } from 'redux'
 import s from './Contact.scss';
 
 // Start with default if no state is passed
@@ -29,8 +28,6 @@ const counter = (state = 0, action) => {
 import Counter from '../../components/Counter'
 
 const title = 'Contact Us';
-
-const store = createStore(counter)
 
 function Contact(props, context) {
   context.setTitle(title);
