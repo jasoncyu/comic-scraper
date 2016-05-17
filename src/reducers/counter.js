@@ -1,6 +1,6 @@
 import { INCREMENT, DECREMENT } from '../constants'
 
-export default function counter(state = {}, action) {
+export default function counter(state = { counterValue: 0 }, action) {
   console.log("action.tpye: ", action.type);
   console.log("state: ", state);
   switch (action.type) {

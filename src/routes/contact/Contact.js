@@ -43,12 +43,14 @@ function Contact(props, context) {
     })
   }
 
+  const initialValue = 0
   return (
     <div className={s.root}>
       <div className={s.container}>
         <h1>{title}</h1>
         <p>...</p>
         <Counter
+          counterValue={initialValue}
           onIncrement={onIncrement}
           onDecrement={onDecrement}
         />

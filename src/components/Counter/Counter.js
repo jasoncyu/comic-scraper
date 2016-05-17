@@ -5,12 +5,13 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Counter.scss'
 import { increment, decrement } from '../../actions/counter'
 
-function Counter({ counterValue, onIncrement, onDecrement }, context) {
+function Counter(props, context) {
+  console.log("props: ", props);
   return (
     <div>
-      <div>counterValue</div>
-      <button onClick={onIncrement}>+</button>
-      <button onClick={onDecrement}>-</button>
+      <div>{props.counterValue}</div>
+      <button onClick={props.onIncrement}>+</button>
+      <button onClick={props.onDecrement}>-</button>
     </div>
   )
 }
