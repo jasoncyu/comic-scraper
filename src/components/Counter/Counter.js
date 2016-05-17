@@ -19,8 +19,27 @@ Counter.contextTypes = {
   store: PropTypes.object.isRequired,
 }
 
-export default connect(state => ({
-  counterValue: state.counterValue,
-}), {
-  increment, decrement,
-})(withStyles(s)(Counter));
+const mapStateToProps = (state) => {
+  return {
+    counterValue: state.counter.counterValue,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onIncrement: () => {
+      console.log('onIncrement in mapdispatch');
+      dispatch({
+        type: 'INCREMENT'
+      })
+    },
+    onDecrement: () => {
+      console.log('onDecrement in mapdispatch');
+      dispatch({
+        type: 'DECREMENT'
+      })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(s)(Counter));
