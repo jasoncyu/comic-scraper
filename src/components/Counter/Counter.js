@@ -19,10 +19,6 @@ function Counter({
   )
 }
 
-Counter.contextTypes = {
-  store: PropTypes.object.isRequired,
-}
-
 Counter.propTypes = {
   counterValue: PropTypes.number,
   onIncrement: PropTypes.func,
