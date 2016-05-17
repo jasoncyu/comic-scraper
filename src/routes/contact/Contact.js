@@ -15,7 +15,6 @@ import s from './Contact.scss';
 
 // Start with default if no state is passed
 const counter = (state = 0, action) => {
-  console.log("state: ", state);
   switch (action.type) {
     case 'INCREMENT':
       return state + 1
