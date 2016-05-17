@@ -31,29 +31,13 @@ const title = 'Contact Us';
 
 function Contact(props, context) {
   context.setTitle(title);
-  const onIncrement = () => {
-    context.store.dispatch({
-      type: 'INCREMENT',
-    })
-  }
 
-  const onDecrement = () => {
-    context.store.dispatch({
-      type: 'DECREMENT',
-    })
-  }
-
-  const initialValue = 0
   return (
     <div className={s.root}>
       <div className={s.container}>
         <h1>{title}</h1>
         <p>...</p>
-        <Counter
-          counterValue={initialValue}
-          onIncrement={onIncrement}
-          onDecrement={onDecrement}
-        />
+        <Counter />
       </div>
     </div>
   );

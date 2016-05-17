@@ -15,8 +15,15 @@ function Counter(props, context) {
     </div>
   )
 }
+
 Counter.contextTypes = {
   store: PropTypes.object.isRequired,
+}
+
+Counter.propTypes = {
+  counterValue: PropTypes.number,
+  onIncrement: PropTypes.func,
+  onDecrement: PropTypes.func,
 }
 
 const mapStateToProps = (state) => {
@@ -28,17 +35,15 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onIncrement: () => {
-      console.log('onIncrement in mapdispatch');
       dispatch({
-        type: 'INCREMENT'
+        type: 'INCREMENT',
       })
     },
     onDecrement: () => {
-      console.log('onDecrement in mapdispatch');
       dispatch({
-        type: 'DECREMENT'
+        type: 'DECREMENT',
       })
-    }
+    },
   }
 }
 
